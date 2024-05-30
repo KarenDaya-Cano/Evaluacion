@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+a{background: plum;
+border: 1px solid black;
+margin: auto;
+width: 20%;
+text-align: center;
+padding: 3px;
+display: grid;}
+</style>
+<body><br>
+    <table>
+        
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Edad</th>
+        </tr>
+        {% for estu in estudiante %}
+        <tr>           
+            <td>{{estu.estudiante}}</td>
+            <td>{{estu.created}}</td>
+            <td>{{estu.edad}}</td>            
+        </tr>
+        {% endfor %}
+    </table><br>
+    <a href="http://127.0.0.1:8000/admin/Quiz/estudiante/add/">Agregar Alumno</a>
+    
+</body>
+</html>
